@@ -1,0 +1,8 @@
+.SuggestionList > .followCard {
+  margin-bottom: 2em;
+}
+
+.SuggestionList h1 {
+  text-align: center;
+  color: white;
+}
