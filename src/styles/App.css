@@ -49,3 +49,15 @@
 .followCard_button.isFollowing:hover {
   background: red;
 }
+
+.followCard_button.isFollowing:hover .followCard_stopFollow {
+  display: block;
+}
+
+.followCard_button.isFollowing:hover .followCard_text {
+  display: none;
+}
+
+.followCard_stopFollow {
+  display: none;
+}

@@ -10,25 +10,12 @@ function TwitterCard({
   const [isFollowingState, setIsFollowingState] = useState(initialIsFollowing);
 
   const text = isFollowingState ? 'Following' : 'Follow';
-  const [textButtonState, setTextButtonState] = useState(text);
   const buttonClasname = isFollowingState
     ? 'followCard_button isFollowing'
     : 'followCard_button';
 
   const handleClick = () => {
     setIsFollowingState(!isFollowingState);
-  };
-
-  const handleOver = () => {
-    isFollowingState
-      ? setTextButtonState('Unfollow')
-      : setTextButtonState('Follow');
-  };
-
-  const handleOut = () => {
-    isFollowingState
-      ? setTextButtonState('Following')
-      : setTextButtonState('Follow');
   };
 
   return (
@@ -48,13 +35,9 @@ function TwitterCard({
         </div>
       </header>
       <aside>
-        <button
-          onClick={handleClick}
-          onMouseOver={handleOver}
-          onMouseOut={handleOut}
-          className={buttonClasname}
-        >
-          {textButtonState}
+        <button onClick={handleClick} className={buttonClasname}>
+          <span className='followCard_text'>{text}</span>
+          <span className='followCard_stopFollow'>Unfollow</span>
         </button>
       </aside>
     </article>
